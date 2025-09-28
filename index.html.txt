@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What is .gtf?</title>
+</head>
+<body>
+    <h1>It is a format used for biological data, it means: Gene Transfer Format, and it helps to describe the caracteristics       	of a genome.</h1>
+
+    <p>I used the AI's help(Chatgpt and Gemini) to tranform my file to a .tsv format.</p>
+    <p>The routine is the following one:</p>
+    
+</body>
+</html>

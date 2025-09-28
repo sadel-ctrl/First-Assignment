@@ -83,20 +83,20 @@
             <p>            # Escribir la fila        </p>
            <p>             tsv_writer.writerow(fila_tsv)       </p> </pre>
         
-          <p>      print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")    </p>  </span>
+          <p>      print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")    </p>
         
           <p>  except FileNotFoundError:    </p>
           <p>     print(f"Error: El archivo no fue encontrado.", file=sys.stderr)   </p>
          <p>   except Exception as e:  </p>
-           <p>     print(f"Ocurrió un error durante la conversión: {e}", file=sys.stderr)  </p>
+           <p>     print(f"Ocurrió un error durante la conversión: {e}", file=sys.stderr)  </p> </span>
         
   <p>       # --- Uso del script ---     </p>
   <p>      if __name__ == "__main__":  </p>
         
-    <p>        archivo_gtf_entrada = "FlatWorm.xenoRefGene.gtf" # Reemplaza con tu nombre de archivo GTF      </p>
+  <span style="margin-right: 50px;">    <p>        archivo_gtf_entrada = "FlatWorm.xenoRefGene.gtf" # Reemplaza con tu nombre de archivo GTF      </p>
    <p>         archivo_tsv_salida = "salida_FlatWorm.tsv"   # Nombre para tu nuevo archivo TSV     </p>
         
-     <p>         gtf_a_tsv(archivo_gtf_entrada, archivo_tsv_salida)    </p>
+     <p>         gtf_a_tsv(archivo_gtf_entrada, archivo_tsv_salida)    </p>  </span>
 
 
 

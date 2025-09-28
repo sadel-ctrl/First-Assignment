@@ -26,9 +26,7 @@
             """ </p>
    <p>         # Nombres de las primeras 8 columnas estándar de GTF
             columnas_gtf = [
-                "seqname", "source", "feature", "start", "end",
-                "score", "strand", "frame"
-            ] </p>
+                "seqname", "source", "feature", "start", "end","score", "strand", "frame" ] </p>
       <p>      # Atributos que queremos extraer de la columna 'attributes' </p>
       <p>      atributos_a_extraer = ["gene_id", "transcript_id", "gene_name"] </p>
         
@@ -93,10 +91,10 @@
   <p>       # --- Uso del script ---     </p>
   <p>      if __name__ == "__main__":  </p>
         
-  <span style="margin-right: 50px;">    <p>        archivo_gtf_entrada = "FlatWorm.xenoRefGene.gtf" # Reemplaza con tu nombre de archivo GTF      </p>
+  <pre>    <p>        archivo_gtf_entrada = "FlatWorm.xenoRefGene.gtf" # Reemplaza con tu nombre de archivo GTF      </p>
    <p>         archivo_tsv_salida = "salida_FlatWorm.tsv"   # Nombre para tu nuevo archivo TSV     </p>
         
-     <p>         gtf_a_tsv(archivo_gtf_entrada, archivo_tsv_salida)    </p>  </span>
+     <p>         gtf_a_tsv(archivo_gtf_entrada, archivo_tsv_salida)    </p>  </pre>
 
 
 

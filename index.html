@@ -20,9 +20,9 @@
   
   <p>      archivo_tsv = "FlatWorm.xenoRefGene.tsv" </p>
         
-   <p>  <pre>   def gtf_a_tsv(archivo_gtf, archivo_tsv): 
-            """ </p> </pre>
-    <p>        Convierte un archivo GTF a un archivo TSV, separando los atributos.
+   <p>  def gtf_a_tsv(archivo_gtf, archivo_tsv): 
+             </p> 
+   <pre> <p>   """     Convierte un archivo GTF a un archivo TSV, separando los atributos.
             """ </p>
    <p>         # Nombres de las primeras 8 columnas estándar de GTF
             columnas_gtf = [
@@ -81,7 +81,7 @@
             <p>            fila_tsv = datos_principales + [atributos_extraidos.get(clave, "") for clave in atributos_a_extraer]   </p>
         
             <p>            # Escribir la fila        </p>
-           <p>             tsv_writer.writerow(fila_tsv)       </p>
+           <p>             tsv_writer.writerow(fila_tsv)       </p> </pre>
         
           <p>      print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")    </p>
         

@@ -6,95 +6,95 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <h1>What is .gtf?</h1>
+  <h1 style="font-size:50px;">What is .gtf?</h1>
   
-  <h2>It is a format used for biological data, it means: Gene Transfer Format, and it helps to describe the caracteristics of a genome.</h2> 
+  <h2 style="font-size:40px;">It is a format used for biological data, it means: Gene Transfer Format, and it helps to describe the caracteristics of a genome.</h2> 
   
   <p style="font-size:30px;">I used the AI's help(Chatgpt and Gemini) to tranform my file to a .tsv format. The routine is the following one:</p>
 
-  <p>   import csv </p>
-  <p>   import re  </p>
-  <p>    import sys </p>
+  <p style="font-size:10px;">   import csv </p>
+  <p style="font-size:10px;">   import re  </p>
+  <p style="font-size:10px;">    import sys </p>
         
-  <p>  archivo_gtf = "FlatWorm.xenoRefGene.gtf" </p>
+  <p style="font-size:10px;">  archivo_gtf = "FlatWorm.xenoRefGene.gtf" </p>
   
-  <p>      archivo_tsv = "FlatWorm.xenoRefGene.tsv" </p>
+  <p style="font-size:10px;">      archivo_tsv = "FlatWorm.xenoRefGene.tsv" </p>
         
-   <p>  def gtf_a_tsv(archivo_gtf, archivo_tsv): 
+   <p style="font-size:10px;">  def gtf_a_tsv(archivo_gtf, archivo_tsv): 
              </p> 
-   <pre> <p>   """     Convierte un archivo GTF a un archivo TSV, separando los atributos.
+   <pre> <p style="font-size:10px;">   """     Convierte un archivo GTF a un archivo TSV, separando los atributos.
             """ </p>
-   <p>         # Nombres de las primeras 8 columnas estándar de GTF
+   <p style="font-size:10px;">         # Nombres de las primeras 8 columnas estándar de GTF
             columnas_gtf = [
                 "seqname", "source", "feature", "start", "end","score", "strand", "frame" ] </p>
-      <p>      # Atributos que queremos extraer de la columna 'attributes' </p>
-      <p>      atributos_a_extraer = ["gene_id", "transcript_id", "gene_name"] </p>
+      <p style="font-size:10px;">      # Atributos que queremos extraer de la columna 'attributes' </p>
+      <p style="font-size:10px;">      atributos_a_extraer = ["gene_id", "transcript_id", "gene_name"] </p>
         
-          <p>  try: </p>
+          <p style="font-size:10px;">  try: </p>
        <span style="margin-right: 50px;">    <p>     with open(archivo_gtf, 'r') as infile, open(archivo_tsv, 'w', newline='') as outfile: </p>
-           <p>         # Creamos un escritor de TSV, usando tabulador como delimitador </p>
-           <p>         tsv_writer = csv.writer(outfile, delimiter='\t')   </p>
+           <p style="font-size:10px;">         # Creamos un escritor de TSV, usando tabulador como delimitador </p>
+           <p style="font-size:10px;">         tsv_writer = csv.writer(outfile, delimiter='\t')   </p>
         
-            <p>        # Escribir la fila de encabezado </p>
-           <p>         encabezados = columnas_gtf + atributos_a_extraer  </p>
-              <p>      tsv_writer.writerow(encabezados)   </p>
+            <p style="font-size:10px;">        # Escribir la fila de encabezado </p>
+           <p style="font-size:10px;">         encabezados = columnas_gtf + atributos_a_extraer  </p>
+              <p style="font-size:10px;">      tsv_writer.writerow(encabezados)   </p>
         
-            <p>        for linea in infile:   </p>
-           <p>             # Ignorar las líneas de comentarios que comienzan con '#'
+            <p style="font-size:10px;">        for linea in infile:   </p>
+           <p style="font-size:10px;">             # Ignorar las líneas de comentarios que comienzan con '#'
                         if linea.startswith('#') or linea.strip() == "":
                             continue  </p>
         
-               <p>         # El GTF es un archivo delimitado por tabuladores.   </p>
-            <p>            # Dividimos la línea en 9 partes (8 columnas estándar + 1 columna de atributos)   </p>
-              <p>          campos = linea.strip().split('\t')  </p>
+               <p style="font-size:10px;">         # El GTF es un archivo delimitado por tabuladores.   </p>
+            <p style="font-size:10px;">            # Dividimos la línea en 9 partes (8 columnas estándar + 1 columna de atributos)   </p>
+              <p style="font-size:10px;">          campos = linea.strip().split('\t')  </p>
         
-           <p>             if len(campos) < 9:    </p>
-          <p>               print(f"Advertencia: línea con formato incorrecto, saltando: {linea.strip()}", file=sys.stderr)
+           <p style="font-size:10px;">             if len(campos) < 9:    </p>
+          <p style="font-size:10px;">               print(f"Advertencia: línea con formato incorrecto, saltando: {linea.strip()}", file=sys.stderr)
                             continue  </p>
         
-           <p>             # Extraer las primeras 8 columnas  </p>
-           <p>             datos_principales = campos[:8]     </p>  
+           <p style="font-size:10px;">             # Extraer las primeras 8 columnas  </p>
+           <p style="font-size:10px;">             datos_principales = campos[:8]     </p>  
         
-           <p>             # Extraer la columna de atributos </p>
-          <p>              columna_atributos = campos[8].strip()          </p>
+           <p style="font-size:10px;">             # Extraer la columna de atributos </p>
+          <p style="font-size:10px;">              columna_atributos = campos[8].strip()          </p>
         
-            <p>            # Diccionario para almacenar los atributos clave-valor extraídos  </p>
-            <p>            atributos_extraidos = {}       </p>
+            <p style="font-size:10px;">            # Diccionario para almacenar los atributos clave-valor extraídos  </p>
+            <p style="font-size:10px;">            atributos_extraidos = {}       </p>
         
-             <p>           # Analizar los atributos        </p>
-            <p>            # El patrón busca 'clave "valor";'     </p>
-             <p>           # Usamos el módulo 're' (regex) para esto. </p>
-           <p>             # Esto es una simplificación; la columna de atributos puede ser más compleja. </p>
-             <p>           for clave in atributos_a_extraer: </p>
-               <p>             # El patrón busca la clave seguida de espacio, comillas, el valor (no comillas), y ;
+             <p style="font-size:10px;">           # Analizar los atributos        </p>
+            <p style="font-size:10px;">            # El patrón busca 'clave "valor";'     </p>
+             <p style="font-size:10px;">           # Usamos el módulo 're' (regex) para esto. </p>
+           <p style="font-size:10px;">             # Esto es una simplificación; la columna de atributos puede ser más compleja. </p>
+             <p style="font-size:10px;">           for clave in atributos_a_extraer: </p>
+               <p style="font-size:10px;">             # El patrón busca la clave seguida de espacio, comillas, el valor (no comillas), y ;
                             patron = rf'{re.escape(clave)} \"([^\"]+)\";'
                             match = re.search(patron, columna_atributos) </p>
-             <p>               if match:     </p>
+             <p style="font-size:10px;">               if match:     </p>
                </p>                 # Si encuentra una coincidencia, toma el grupo de captura (el valor)  </p>
-               <p>                 atributos_extraidos[clave] = match.group(1) </p>
-            <p>                else: </p>
-             <p>                   atributos_extraidos[clave] = "" # Vacío si no se encuentra  </p>
+               <p style="font-size:10px;">                 atributos_extraidos[clave] = match.group(1) </p>
+            <p style="font-size:10px;">                else: </p>
+             <p style="font-size:10px;">                   atributos_extraidos[clave] = "" # Vacío si no se encuentra  </p>
         
-            <p>            # Construir la fila final para el TSV    </p>
-            <p>            fila_tsv = datos_principales + [atributos_extraidos.get(clave, "") for clave in atributos_a_extraer]   </p>
+            <p style="font-size:10px;">            # Construir la fila final para el TSV    </p>
+            <p style="font-size:10px;">            fila_tsv = datos_principales + [atributos_extraidos.get(clave, "") for clave in atributos_a_extraer]   </p>
         
-            <p>            # Escribir la fila        </p>
-           <p>             tsv_writer.writerow(fila_tsv)       </p> </pre>
+            <p style="font-size:10px;">            # Escribir la fila        </p>
+           <p style="font-size:10px;">             tsv_writer.writerow(fila_tsv)       </p> </pre>
         
-          <p>      print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")    </p>
+          <p style="font-size:10px;">      print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")    </p>
         
-          <p>  except FileNotFoundError:    </p>
-          <p>     print(f"Error: El archivo no fue encontrado.", file=sys.stderr)   </p>
-         <p>   except Exception as e:  </p>
-           <p>     print(f"Ocurrió un error durante la conversión: {e}", file=sys.stderr)  </p> </span>
+          <p style="font-size:10px;">  except FileNotFoundError:    </p>
+          <p style="font-size:10px;">     print(f"Error: El archivo no fue encontrado.", file=sys.stderr)   </p>
+         <p style="font-size:10px;">   except Exception as e:  </p>
+           <p style="font-size:10px;">     print(f"Ocurrió un error durante la conversión: {e}", file=sys.stderr)  </p> </span>
         
-  <p>       # --- Uso del script ---     </p>
-  <p>      if __name__ == "__main__":  </p>
+  <p style="font-size:10px;">       # --- Uso del script ---     </p>
+  <p style="font-size:10px;">      if __name__ == "__main__":  </p>
         
-  <pre>    <p>        archivo_gtf_entrada = "FlatWorm.xenoRefGene.gtf" # Reemplaza con tu nombre de archivo GTF      </p>
-   <p>         archivo_tsv_salida = "salida_FlatWorm.tsv"   # Nombre para tu nuevo archivo TSV     </p>
+  <pre>    <p style="font-size:10px;">        archivo_gtf_entrada = "FlatWorm.xenoRefGene.gtf" # Reemplaza con tu nombre de archivo GTF      </p>
+   <p style="font-size:10px;">         archivo_tsv_salida = "salida_FlatWorm.tsv"   # Nombre para tu nuevo archivo TSV     </p>
         
-     <p>         gtf_a_tsv(archivo_gtf_entrada, archivo_tsv_salida)    </p>  </pre>
+     <p style="font-size:10px;">         gtf_a_tsv(archivo_gtf_entrada, archivo_tsv_salida)    </p>  </pre>
 
 
 

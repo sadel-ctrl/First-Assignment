@@ -10,89 +10,90 @@
   <h2>It is a format used for biological data, it means: Gene Transfer Format, and it helps to describe the caracteristics of a genome.</h2>
   
   <p>I used the AI's help(Chatgpt and Gemini) to tranform my file to a .tsv format. The routine is the following one:</p>
-  <p>import csv
-import re
-import sys
+  <p>
+  import csv
+  import re
+  import sys
 
-archivo_gtf = "FlatWorm.xenoRefGene.gtf"
-archivo_tsv = "FlatWorm.xenoRefGene.tsv"
-
-def gtf_a_tsv(archivo_gtf, archivo_tsv):
-    """
-    Convierte un archivo GTF a un archivo TSV, separando los atributos.
-    """
-    # Nombres de las primeras 8 columnas estándar de GTF
-    columnas_gtf = [
-        "seqname", "source", "feature", "start", "end",
-        "score", "strand", "frame"
-    ]
-    # Atributos que queremos extraer de la columna 'attributes'
-    atributos_a_extraer = ["gene_id", "transcript_id", "gene_name"]
-
-    try:
-        with open(archivo_gtf, 'r') as infile, open(archivo_tsv, 'w', newline='') as outfile:
-            # Creamos un escritor de TSV, usando tabulador como delimitador
-            tsv_writer = csv.writer(outfile, delimiter='\t')
-
-            # Escribir la fila de encabezado
-            encabezados = columnas_gtf + atributos_a_extraer
-            tsv_writer.writerow(encabezados)
-
-            for linea in infile:
-                # Ignorar las líneas de comentarios que comienzan con '#'
-                if linea.startswith('#') or linea.strip() == "":
-                    continue
-
-                # El GTF es un archivo delimitado por tabuladores.
-                # Dividimos la línea en 9 partes (8 columnas estándar + 1 columna de atributos)
-                campos = linea.strip().split('\t')
-
-                if len(campos) < 9:
-                    print(f"Advertencia: línea con formato incorrecto, saltando: {linea.strip()}", file=sys.stderr)
-                    continue
-
-                # Extraer las primeras 8 columnas
-                datos_principales = campos[:8]
-
-                # Extraer la columna de atributos
-                columna_atributos = campos[8].strip()
-
-                # Diccionario para almacenar los atributos clave-valor extraídos
-                atributos_extraidos = {}
-
-                # Analizar los atributos
-                # El patrón busca 'clave "valor";'
-                # Usamos el módulo 're' (regex) para esto.
-                # Esto es una simplificación; la columna de atributos puede ser más compleja.
-                for clave in atributos_a_extraer:
-                    # El patrón busca la clave seguida de espacio, comillas, el valor (no comillas), y ;
-                    patron = rf'{re.escape(clave)} \"([^\"]+)\";'
-                    match = re.search(patron, columna_atributos)
-                    if match:
-                        # Si encuentra una coincidencia, toma el grupo de captura (el valor)
-                        atributos_extraidos[clave] = match.group(1)
-                    else:
-                        atributos_extraidos[clave] = "" # Vacío si no se encuentra
-
-                # Construir la fila final para el TSV
-                fila_tsv = datos_principales + [atributos_extraidos.get(clave, "") for clave in atributos_a_extraer]
-
-                # Escribir la fila
-                tsv_writer.writerow(fila_tsv)
-
-        print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")
-
-    except FileNotFoundError:
-        print(f"Error: El archivo no fue encontrado.", file=sys.stderr)
-    except Exception as e:
-        print(f"Ocurrió un error durante la conversión: {e}", file=sys.stderr)
-
-# --- Uso del script ---
-if __name__ == "__main__":
-    # Define los nombres de tus archivos
-    archivo_gtf_entrada = "FlatWorm.xenoRefGene.gtf" # Reemplaza con tu nombre de archivo GTF
-    archivo_tsv_salida = "salida_FlatWorm.tsv"   # Nombre para tu nuevo archivo TSV
-
-    gtf_a_tsv(archivo_gtf_entrada, archivo_tsv_salida)</p>
+              archivo_gtf = "FlatWorm.xenoRefGene.gtf"
+              archivo_tsv = "FlatWorm.xenoRefGene.tsv"
+              
+              def gtf_a_tsv(archivo_gtf, archivo_tsv):
+                  """
+                Convierte un archivo GTF a un archivo TSV, separando los atributos.
+                """
+                # Nombres de las primeras 8 columnas estándar de GTF
+                columnas_gtf = [
+                    "seqname", "source", "feature", "start", "end",
+                    "score", "strand", "frame"
+                ]
+                # Atributos que queremos extraer de la columna 'attributes'
+                atributos_a_extraer = ["gene_id", "transcript_id", "gene_name"]
+            
+                try:
+                    with open(archivo_gtf, 'r') as infile, open(archivo_tsv, 'w', newline='') as outfile:
+                        # Creamos un escritor de TSV, usando tabulador como delimitador
+                        tsv_writer = csv.writer(outfile, delimiter='\t')
+            
+                        # Escribir la fila de encabezado
+                        encabezados = columnas_gtf + atributos_a_extraer
+                        tsv_writer.writerow(encabezados)
+            
+                        for linea in infile:
+                            # Ignorar las líneas de comentarios que comienzan con '#'
+                            if linea.startswith('#') or linea.strip() == "":
+                                continue
+            
+                            # El GTF es un archivo delimitado por tabuladores.
+                            # Dividimos la línea en 9 partes (8 columnas estándar + 1 columna de atributos)
+                            campos = linea.strip().split('\t')
+            
+                            if len(campos) < 9:
+                                print(f"Advertencia: línea con formato incorrecto, saltando: {linea.strip()}", file=sys.stderr)
+                                continue
+            
+                            # Extraer las primeras 8 columnas
+                            datos_principales = campos[:8]
+            
+                            # Extraer la columna de atributos
+                            columna_atributos = campos[8].strip()
+            
+                            # Diccionario para almacenar los atributos clave-valor extraídos
+                            atributos_extraidos = {}
+            
+                            # Analizar los atributos
+                            # El patrón busca 'clave "valor";'
+                            # Usamos el módulo 're' (regex) para esto.
+                            # Esto es una simplificación; la columna de atributos puede ser más compleja.
+                            for clave in atributos_a_extraer:
+                                # El patrón busca la clave seguida de espacio, comillas, el valor (no comillas), y ;
+                                patron = rf'{re.escape(clave)} \"([^\"]+)\";'
+                                match = re.search(patron, columna_atributos)
+                                if match:
+                                    # Si encuentra una coincidencia, toma el grupo de captura (el valor)
+                                    atributos_extraidos[clave] = match.group(1)
+                                else:
+                                    atributos_extraidos[clave] = "" # Vacío si no se encuentra
+            
+                            # Construir la fila final para el TSV
+                            fila_tsv = datos_principales + [atributos_extraidos.get(clave, "") for clave in atributos_a_extraer]
+            
+                            # Escribir la fila
+                            tsv_writer.writerow(fila_tsv)
+            
+                    print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")
+            
+                except FileNotFoundError:
+                    print(f"Error: El archivo no fue encontrado.", file=sys.stderr)
+                except Exception as e:
+                    print(f"Ocurrió un error durante la conversión: {e}", file=sys.stderr)
+            
+            # --- Uso del script ---
+            if __name__ == "__main__":
+                # Define los nombres de tus archivos
+                archivo_gtf_entrada = "FlatWorm.xenoRefGene.gtf" # Reemplaza con tu nombre de archivo GTF
+                archivo_tsv_salida = "salida_FlatWorm.tsv"   # Nombre para tu nuevo archivo TSV
+            
+                gtf_a_tsv(archivo_gtf_entrada, archivo_tsv_salida)</p>
 </body>
 </html>

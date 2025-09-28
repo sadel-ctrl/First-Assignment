@@ -33,7 +33,7 @@
       <p>      atributos_a_extraer = ["gene_id", "transcript_id", "gene_name"] </p>
         
           <p>  try: </p>
-           <p>     with open(archivo_gtf, 'r') as infile, open(archivo_tsv, 'w', newline='') as outfile: </p>
+       <span style="margin-right: 50px;">    <p>     with open(archivo_gtf, 'r') as infile, open(archivo_tsv, 'w', newline='') as outfile: </p>
            <p>         # Creamos un escritor de TSV, usando tabulador como delimitador </p>
            <p>         tsv_writer = csv.writer(outfile, delimiter='\t')   </p>
         
@@ -83,7 +83,7 @@
             <p>            # Escribir la fila        </p>
            <p>             tsv_writer.writerow(fila_tsv)       </p> </pre>
         
-          <p>      print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")    </p>
+          <p>      print(f"Conversión completa. Archivo TSV guardado en: {archivo_tsv}")    </p>  </span>
         
           <p>  except FileNotFoundError:    </p>
           <p>     print(f"Error: El archivo no fue encontrado.", file=sys.stderr)   </p>

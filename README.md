@@ -1,5 +1,5 @@
 # Primer trabajo
-Esta es la parte 1 del primer tarbajo del curso, aquí voy a mostrar uuna rutina para ejecutar en Pyhton, que permite tranaformar archivos de formato .gtf a formato .tsv.
+Esta es la parte 1 del primer tarbajo del curso, aquí voy a mostrar uuna rutina para ejecutar en Pyhton, que permite transformar archivos de formato .gtf a formato .tsv.
 
 La rutina mostrada fue generada con ayuda la IA, específicamente de Chatgpt y Gemini.
 

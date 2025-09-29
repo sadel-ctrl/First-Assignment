@@ -20,10 +20,11 @@ La rutina mostrada fue generada con ayuda la IA, específicamente de Chatgpt y G
   - transcript_id: identificador del transcrito.
   - gene_name: el nombre de este gen, en este caso, no aplica, ya que en el archivo no se encuentra ninguno.
 
-Adicionalmente, se adjuntan dos fotografías evidenciando el cambio generado al tranformar el formato del archivo; en la primera, se observa cómo se visualiza el archivo con el formato .gtf en Pycharm, y en la segunda, cómo se ve cuando ya se transformó a formato .tsv.
+Adicionalmente, se adjuntan dos fotografías evidenciando el cambio generado al tranformar el formato del archivo; en la primera(datos_antes), se observa cómo se visualiza el archivo con el formato .gtf en Pycharm, y en la segunda(datos_después), cómo se ve cuando ya se transformó a formato .tsv.
 
 ## Acerca de la rutina
 
+- Se encuentra en la parte superior como flatworm.py.
 - Como se dijo anteriormente, esta rutina está pensada para ser utilizada en Python 3.
 - Se debe descargar la base de datos y ubicarla en la carpeta y el ambiente virtual correspondiente.
 - Se carga la rutina y se reemplazan los nombres de los archivos que sean necesarios.

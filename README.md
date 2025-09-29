@@ -3,7 +3,7 @@ Esta es la parte 1 del primer tarbajo del curso, aquí voy a mostrar uuna rutina
 
 La rutina mostrada fue generada con ayuda la IA, específicamente de Chatgpt y Gemini.
 
-#Acerca del archivo
+## Acerca del archivo
 
 - El archivo que voy a utilizar hace parte del genoma de el platelminto japonés flatSchistosoma japonicum, que fue tomado de la página web de la UCSC Genome Browser.
 - La idea al transformar este archivo a formato .tsv es poder visualizar la información de manera más organizada y organizada en 11 columnas diferentes, separadas claramente, cada una conteniendo la siguiente información:

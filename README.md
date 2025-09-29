@@ -22,6 +22,16 @@ La rutina mostrada fue generada con ayuda la IA, específicamente de Chatgpt y G
 
 Adicionalmente, se adjuntan dos fotografías evidenciando el cambio generado al tranformar el formato del archivo; en la primera, se observa cómo se visualiza el archivo con el formato .gtf en Pycharm, y en la segunda, cómo se ve cuando ya se transformó a formato .tsv.
 
+## Acerca de la rutina
+
+- Como se dijo anteriormente, esta rutina está pensada para ser utilizada en Python 3.
+- Se debe descargar la base de datos y ubicarla en la carpeta y el ambiente virtual correspondiente.
+- Se carga la rutina y se reemplazan los nombres de los archivos que sean necesarios.
+- Una vez creado el archivo .tsv, este ya está listo para ser visualizado en Pycharm o en Excel.
+
+
+
+
   
 
   

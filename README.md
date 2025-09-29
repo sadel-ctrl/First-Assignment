@@ -5,6 +5,7 @@ La rutina mostrada fue generada con ayuda la IA, específicamente de Chatgpt y G
 
 - El archivo que voy a utilizar hace parte del genoma de el platelminto japonés flatSchistosoma japonicum, que fue tomado de la página web de la UCSC Genome Browser.
 - La idea al transformar este archivo a formato .tsv es poder visualizar la información de manera más organizada y organizada en 11 columnas diferentes, separadas claramente, cada una conteniendo la siguiente información:
+
   - seqname: nombre de la secuencia de referencia.
   - source: base de datos donde fue generada.
   - feature: característica a la que se refiere.
@@ -16,6 +17,8 @@ La rutina mostrada fue generada con ayuda la IA, específicamente de Chatgpt y G
   - gene_id: es el identificador único de este gen.
   - transcript_id: identificador del transcrito.
   - gene_name: el nombre de este gen, en este caso, no aplica, ya que en el archivo no se encuentra ninguno.
+
+  
 
 
 

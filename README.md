@@ -20,6 +20,8 @@ La rutina mostrada fue generada con ayuda la IA, específicamente de Chatgpt y G
   - transcript_id: identificador del transcrito.
   - gene_name: el nombre de este gen, en este caso, no aplica, ya que en el archivo no se encuentra ninguno.
 
+Adicionalmente, se adjuntan dos fotografías evidenciando el cambio generado al tranformar el formato del archivo; en la primera, se observa cómo se visualiza el archivo con el formato .gtf en Pycharm, y en la segunda, cómo se ve cuando ya se transformó a formato .tsv.
+
   
 
   

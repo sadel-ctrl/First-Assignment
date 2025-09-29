@@ -1,7 +1,21 @@
-# First-Assigment
-This is where the first assigment for the course will be uploaded; here, I will explain how to transform a dataset with .gtf format, to a .tsv format.
+# Primer trabajo
+Esta es la parte 1 del primer tarbajo del curso, aquí voy a mostrar uuna rutina para ejecutar en Pyhton, que permite tranaformar archivos de formato .gtf a formato .tsv.
 
-The file I am going to use is one part of the genome of the japanese flatworm Schistosoma japonicum, which is taken from the UCSC web page.
-The idea when transformin this file into a .tsv format is to visualize all the information in 11 organized columns, separated by vertical lines.
+La rutina mostrada fue generada con ayuda la IA, específicamente de Chatgpt y Gemini.
 
-The routine shown was created with AI's help, specifically Chatgpt and Gemini.
+- El archivo que voy a utilizar hace parte del genoma de el platelminto japonés flatSchistosoma japonicum, que fue tomado de la página web de la UCSC Genome Browser.
+- La idea al transformar este archivo a formato .tsv es poder visualizar la información de manera más organizada y organizada en 11 columnas diferentes, separadas claramente, cada una conteniendo la siguiente información:
+  - seqname: nombre de la secuencia de referencia.
+  - source: base de datos donde fue generada.
+  - feature: característica a la que se refiere.
+  - start: posición inicial del cromosoma.
+  - end: posición final del cromosoma.
+  - score: valor numérico de confianza en la predicción (en este caso, no se utliza, aparece un .).
+  - strand: hebra de ADn en la que se encuentra(+ o -).
+  - frame: Marco de lectura (0, 1, 2) para las regiones codificantes, o . si no aplica.
+  - gene_id: es el identificador único de este gen.
+  - transcript_id: identificador del transcrito.
+  - gene_name: el nombre de este gen, en este caso, no aplica, ya que en el archivo no se encuentra ninguno.
+
+
+
